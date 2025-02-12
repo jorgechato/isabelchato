@@ -10,3 +10,23 @@ export const SOCIAL_MEDIA: Record<string, { name: string; icon: any }> = {
         icon: IdCard,
     },
 };
+
+export type MenuType = {
+    name: string;
+    url: string;
+}
+
+export const MENU: MenuType[] = [
+    {
+        name: 'Home',
+        url: '/',
+    },
+    {
+        name: 'About',
+        url: '/about',
+    },
+    {
+        name: 'Library',
+        url: '/library',
+    },
+];

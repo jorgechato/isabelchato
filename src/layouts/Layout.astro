@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import '@fontsource-variable/onest';
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro"
+import ProfilePicture from '@/components/ProfilePicture.astro';
 
 interface Props {
   description: string
@@ -25,6 +26,7 @@ const { description, title } = Astro.props;
 	</head>
 	<body>
         <Header />
+        <ProfilePicture />
 		<slot />
         <Footer />
 	</body>

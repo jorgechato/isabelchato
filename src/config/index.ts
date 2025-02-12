@@ -1,6 +1,6 @@
 import sns from './sns.json';
 import profile from './profile.json';
-import { SOCIAL_MEDIA } from './ui';
+import { MENU, SOCIAL_MEDIA } from './ui';
 
 const SNS_DICT = { ...sns } as const;
 
@@ -25,4 +25,8 @@ export function getSNS(): SNSType[] {
 
 export function getProfile() {
     return { ...profile };
+}
+
+export function getMenu() {
+    return MENU;
 }

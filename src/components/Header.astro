@@ -2,12 +2,14 @@
 import LanguageSelector from "@/components/LanguageSelector.astro"
 import HeaderLink from "@/components/HeaderLink.astro"
 
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-import { getProfile, getSNS } from '@/config';
+import { getProfile, getSNS, getMenu } from '@/config';
 
 const profile = getProfile();
 const sns = getSNS();
+const menu = getMenu();
+const { pathname } = Astro.url;
 ---
 
 <header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
@@ -23,14 +25,24 @@ const sns = getSNS();
     </HeaderLink>
     <nav
       id="header-menu"
-      class="fixed w-full h-dvh inset-0 bg-darkest/90 md:text-md lg:text-md flex flex-col items-center justify-center
-            lg:justify-end md:justify-end gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:flex-row md:translate-y-[initial]"
+      class="fixed w-full h-dvh inset-0 bg-white md:text-md lg:text-md flex flex-col items-center justify-center
+            lg:justify-end md:justify-end gap-2 md:gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:flex-row md:translate-y-[initial]"
     >
+        {menu.map((item) => (
+        <HeaderLink
+                class={`hover:opacity-100 transition-opacity duration-300 ${pathname === item.url ? 'opacity-100' : 'opacity-50'} cursor-pointer font-semibold`}
+                href={item.url}>
+            {item.name}
+          </HeaderLink>
+        ))}
         {sns.map((item) => (
           <HeaderLink class="hover:opacity-100 transition-opacity duration-300 opacity-80 cursor-pointer" href={item.url} target="_blank">
             <item.icon/>
           </HeaderLink>
         ))}
+      <a href="#header-nav" class="md:hidden absolute top-6 right-6">
+        <X />
+      </a>
     </nav>
     <a href="#header-menu" class="md:hidden"><Menu /></a>
   </div>
