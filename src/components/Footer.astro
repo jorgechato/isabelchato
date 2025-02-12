@@ -1,0 +1,53 @@
+---
+import Link from "@/components/Link.astro"
+import { getSNS, getProfile } from '@/config';
+
+const sns = getSNS();
+const profile = getProfile();
+---
+
+<footer class="bg-darker/60">
+  <div class="mx-auto w-full max-w-screen-xl p-4 px-6 py-6 lg:py-8">
+    <div class="md:flex justify-center">
+      <div class="grid grid-cols-2 gap-16 sm:grid-cols-2 sm:gap-12">
+        <div>
+          <h2 class="mb-6 text-sm font-semibold uppercase">
+            Follow my work at
+          </h2>
+          <ul class="flex flex-col gap-2 font-medium text-zinc-600">
+            {sns.map((item) => (
+              <li>
+                <Link
+                  href={item.url}
+                  class="hover:underline hover:text-lightest duration-300"
+                  >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold uppercase">
+            Contact
+          </h2>
+          <ul class="flex flex-col gap-2 font-medium text-zinc-600">
+            <li>
+              <Link
+                href={`mailto:${profile.EMAIL}`}
+                class="hover:underline hover:text-lightest duration-300"
+                >
+                {profile.EMAIL}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-zinc-100 sm:mx-auto lg:my-8" />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-zinc-300 sm:text-center"
+            >&copy; {profile.NAME} 2024 -&nbsp;{new Date().getFullYear()}&nbsp;
+      </span>
+  </div>
+</footer>
