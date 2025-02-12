@@ -1,0 +1,15 @@
+---
+import { getProfile } from '@/config';
+
+const profile = getProfile();
+---
+
+<div class="text-center mt-28 mb-14">
+  <img
+    src="/profile.jpeg"
+    loading="lazy"
+    class="mx-auto mb-4 w-32 rounded-full aspect-square"
+    alt="Avatar" />
+  <h5 class="mb-2 text-xl font-medium leading-tight">{profile.NAME}</h5>
+  <p class="text-zinc-400">{profile.JOB_TITLE}</p>
+</div>

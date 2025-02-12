@@ -1,0 +1,37 @@
+---
+import LanguageSelector from "@/components/LanguageSelector.astro"
+import HeaderLink from "@/components/HeaderLink.astro"
+
+import { Menu } from 'lucide-react';
+
+import { getProfile, getSNS } from '@/config';
+
+const profile = getProfile();
+const sns = getSNS();
+---
+
+<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-16">
+    <HeaderLink
+      checkActive={false}
+      href='/'
+      class="relative z-10"
+    >
+            <h2 class="text-xl font-bold">
+                { profile.HEADER }
+            </h2>
+    </HeaderLink>
+    <nav
+      id="header-menu"
+      class="fixed w-full h-dvh inset-0 bg-darkest/90 md:text-md lg:text-md flex flex-col items-center justify-center
+            lg:justify-end md:justify-end gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:flex-row md:translate-y-[initial]"
+    >
+        {sns.map((item) => (
+          <HeaderLink class="hover:opacity-100 transition-opacity duration-300 opacity-80 cursor-pointer" href={item.url} target="_blank">
+            <item.icon/>
+          </HeaderLink>
+        ))}
+    </nav>
+    <a href="#header-menu" class="md:hidden"><Menu /></a>
+  </div>
+</header>

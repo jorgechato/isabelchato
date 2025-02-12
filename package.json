@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
+    "@fontsource-variable/onest": "^5.1.1",
     "@tailwindcss/vite": "^4.0.6",
     "astro": "^5.2.5",
+    "lucide-react": "^0.475.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "swiper": "^11.2.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.2.0",
