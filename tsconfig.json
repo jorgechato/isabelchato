@@ -10,5 +10,14 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react"
+  },
+  /* Linting */
+  "strict": true,
+  "noUnusedLocals": true,
+  "noUnusedParameters": true,
+  "noFallthroughCasesInSwitch": true,
+  "paths": {
+    "@/*": ["./src/*"],
+    "~/*": ["./*"]
   }
 }
