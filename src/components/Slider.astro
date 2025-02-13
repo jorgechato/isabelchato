@@ -1,0 +1,46 @@
+---
+import 'swiper/css/bundle'
+
+const { hrefs } = Astro.props;
+---
+
+<section
+  style='--swiper-pagination-color: var(--color-yellow-400)'
+  class:list={['swiper mySwiper not-prose mx-auto w-full max-w-lg mx-auto rounded-lg', `h-[400px]`]}
+>
+  <div class='swiper-wrapper'>
+    {hrefs.map((href) => (
+        <div class='swiper-slide relative'>
+          <img
+            src={href}
+            alt={href}
+            class='absolute left-0 top-0 z-0 m-0 h-full w-full object-cover'
+          />
+        </div>
+      ))}
+  </div>
+  <div class='swiper-pagination'></div>
+</section>
+
+<script>
+  // @ts-ignore
+  import Swiper from 'swiper/bundle'
+
+  new Swiper('.mySwiper', {
+    cssMode: true,
+    lazy: true,
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    mousewheel: true,
+    keyboard: true
+  })
+</script>

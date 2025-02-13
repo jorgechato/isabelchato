@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getProfile, getDiagrams } from '@/config';
+import { getProfile, getDiagrams, getSpeaker, getPosters } from '@/config';
 import Quotes from '@/components/Quotes.astro';
-import Slider from '@/components/Slider';
+import Slider from '@/components/Slider.astro';
+import Timeline from '@/components/Timeline';
 
 const profile = getProfile();
 const diagrams = getDiagrams();
+const speaker = getSpeaker();
+const posters = getPosters();
 ---
 
 <Layout
