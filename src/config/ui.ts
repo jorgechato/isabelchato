@@ -1,13 +1,17 @@
-import { IdCard, Linkedin } from 'lucide-react';
+import { IdCard, Linkedin, Newspaper } from 'lucide-react';
 
 export const SOCIAL_MEDIA: Record<string, { name: string; icon: any }> = {
+  orcid: {
+    name: 'ORCID',
+    icon: IdCard,
+  },
   linkedin: {
     name: 'Linkedin',
     icon: Linkedin,
   },
-  orcid: {
-    name: 'ORCID',
-    icon: IdCard,
+  substack: {
+    name: 'Substack',
+    icon: Newspaper,
   },
 };
 
