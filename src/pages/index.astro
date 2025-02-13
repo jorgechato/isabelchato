@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getProfile, getDiagrams, getSpeaker, getPosters } from '@/config';
 import Quotes from '@/components/Quotes.astro';
 import Slider from '@/components/Slider.astro';
-import Timeline from '@/components/Timeline';
+import Timeline from '@/components/Timeline.astro';
 
 const profile = getProfile();
 const diagrams = getDiagrams();
@@ -16,7 +16,15 @@ title={profile.NAME}
 description={profile.DESCRIPTION}
 >
 	<main class="mx-auto mb-16 px-4">
+        <h2 class="text-lg font-medium mb-4 text-center text-yellow-500">{profile.SPEAKER_HEADER}</h2>
+        <h3 class="mb-4 text-center text-zinc-400">{profile.SPEAKER_DESCRIPTION}</h3>
+        <Timeline events={speaker} />
+        <h2 class="text-lg font-medium mb-4 text-center text-yellow-500">{profile.POSTERS_HEADER}</h2>
+        <h3 class="mb-4 text-center text-zinc-400">{profile.POSTERS_DESCRIPTION}</h3>
+        <Timeline events={posters} />
         <Quotes />
+        <h2 class="text-lg font-medium mb-4 text-center text-yellow-500">{profile.DIAGRAMS_HEADER}</h2>
+        <h3 class="mb-4 text-center text-zinc-400">{profile.DIAGRAMS_DESCRIPTIPON}</h3>
         <Slider hrefs={diagrams} />
 	</main>
 </Layout>

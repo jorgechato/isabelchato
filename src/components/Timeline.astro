@@ -1,0 +1,20 @@
+---
+const { events } = Astro.props;
+
+---
+
+<section class="max-w-screen-md mx-auto mb-16 px-4 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-middle mt-12">
+    {events.map((event, index) => (
+        <article
+            key={event.id}
+            class={`relative isolate flex flex-col justify-end overflow-hidden rounded-md px-2 pb-2 pt-40 mx-auto w-full aspect-video group
+                ${index === 0 && events.length % 2 !== 0 ? "md:col-span-2" : ""}`}
+        >
+            <img src={event.image} alt={event.title} class="absolute inset-0 h-full w-full object-cover scale-100 group-hover:scale-110 transition-all">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 group-hover:bg-none transition-all"></div>
+            <h3 class="z-10 mt-3 text-md font-medium text-white group-hover:text-transparent transition-all">{event.title}</h3>
+            {event.description&&<h3 class="z-10 text-sm text-zinc-300 group-hover:text-transparent transition-all">{event.description}</h3>}
+            <div class="z-10 text-xs text-black font-bold bg-white px-2 rounded rounded-md absolute top-2 right-4">{event.year}</div>
+        </article>
+    ))}
+</section>

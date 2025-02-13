@@ -3,5 +3,11 @@
   "NAME": "Isabel Chato Astrain",
   "DESCRIPTION": "Isabel Chato Astrain personal web page",
   "JOB_TITLE": "Ph.D. Biomedicine - Neuroscience",
-  "EMAIL": "ichatoastrain@gmail.com"
+  "EMAIL": "ichatoastrain@gmail.com",
+  "SPEAKER_HEADER": "Invited Speaker",
+  "SPEAKER_DESCRIPTION": "Almost half of a decade bringing Science to the Stage!",
+  "POSTERS_HEADER": "Posters",
+  "POSTERS_DESCRIPTION": "Research at a Glance",
+  "DIAGRAMS_HEADER": "Some of my diagrams",
+  "DIAGRAMS_DESCRIPTIPON": "Visuals That Make Research Clear and Engaging"
 }
