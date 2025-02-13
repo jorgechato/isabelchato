@@ -1,0 +1,24 @@
+---
+import HeaderLink from "@/components/HeaderLink.astro"
+import { getQuotes } from '@/config';
+import { Quote } from 'lucide-react';
+
+const quotes = getQuotes();
+---
+
+<section class="max-w-screen-lg mx-auto mb-16 px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+    {quotes.map((quote) => (
+        <HeaderLink class="text-center md:flex-1" href={quote.link} target="_blank">
+            <div class="flex flex-col items-center justify-center text-yellow-500">
+                <Quote class="w-12 h-12" />
+            </div>
+            <blockquote>
+                <p class="text-lg italic font-medium">"{quote.quote}"</p>
+            </blockquote>
+            <div class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+                <cite class="pe-3">{quote.author}</cite>
+                <cite class="ps-3 text-sm text-zinc-500">{quote.position}</cite>
+            </div>
+        </HeaderLink >
+    ))}
+</section>

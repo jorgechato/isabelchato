@@ -1,15 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getProfile } from '@/config';
+import { getProfile, getDiagrams } from '@/config';
+import Quotes from '@/components/Quotes.astro';
+import Slider from '@/components/Slider';
 
 const profile = getProfile();
-
+const diagrams = getDiagrams();
 ---
 
 <Layout
 title={profile.NAME}
 description={profile.DESCRIPTION}
 >
-	<main>
+	<main class="mx-auto mb-16 px-4">
+        <Quotes />
+        <Slider hrefs={diagrams} />
 	</main>
 </Layout>

@@ -25,8 +25,4 @@ export const MENU: MenuType[] = [
         name: 'About',
         url: '/about',
     },
-    {
-        name: 'Library',
-        url: '/library',
-    },
 ];

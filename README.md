@@ -2,17 +2,17 @@
 
 ## Project Structure
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+The content lives in the `src/content/` directory.
+If you want to modify any information on the page, you can refer to that folder.
+
+There are 2 types of files:
+
+* `.mdx` files for static content
+* `.json` files for dynamic content
+
+If you need to add or modify the public assets, you can do it in the `public/` directory.
+
+Keep in mind that some `.json` files in `src/content/` refer to the public assets in `public/`. If you change any asset in `public/`, make sure to update the corresponding `.json` file.
 
 ## Commands
 

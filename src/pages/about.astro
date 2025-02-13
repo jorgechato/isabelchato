@@ -1,6 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
 import { getProfile } from '@/config';
+import About from '@/content/about.mdx';
 
 const profile = getProfile();
 
@@ -11,6 +12,8 @@ title={profile.NAME}
 description={profile.DESCRIPTION}
 >
 	<main>
-        About
+        <section class="mx-auto max-w-screen-md mb-16 px-4">
+            <About />
+        </section>
 	</main>
 </Layout>
