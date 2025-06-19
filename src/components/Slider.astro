@@ -21,26 +21,3 @@ const { hrefs } = Astro.props;
   </div>
   <div class='swiper-pagination'></div>
 </section>
-
-<script>
-  // @ts-ignore
-  import Swiper from 'swiper/bundle'
-
-  new Swiper('.mySwiper', {
-    cssMode: true,
-    lazy: true,
-    loop: true,
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    mousewheel: true,
-    keyboard: true
-  })
-</script>
